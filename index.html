@@ -391,4 +391,30 @@ h2.sec{font-size:1.8rem;margin:50px 0 6px;border-bottom:2px solid var(--line);pa
   if(location.hash.indexOf('istanbul')!==-1)pick('istanbul-pane');
 })();
 </script>
+<script>
+/* Liceu update: Saturday concert replaces the cancelled Sunday opera plan. */
+(function(){
+  var sat=document.getElementById('sat'), sun=document.getElementById('sun'); if(!sat||!sun)return;
+  function rows(section){return Array.prototype.slice.call(section.querySelectorAll('.timeline > .row'))}
+  function rowContaining(section,needle){return rows(section).find(function(r){return r.textContent.indexOf(needle)!==-1})}
+  function setWhen(row,text){var w=row&&row.querySelector('.when');if(w)w.innerHTML=text}
+  var overview=document.querySelector('.overview, .howto');
+  document.querySelectorAll('a.gday[href="#sun"] .gt').forEach(function(x){x.innerHTML='<b>Sunday &middot; Nov. 29</b><strong>Sagrada, Modernisme &amp; Compline</strong>Sagrada Fam&iacute;lia Mass &middot; relaxed old-city evening'});
+  var sundayTitle=sun.querySelector('.dayhead h2');if(sundayTitle)sundayTitle.textContent='Sagrada, Modernisme & Compline';
+  var chips=sun.querySelector('.chips');if(chips)chips.innerHTML='<span class="chip"><b>9:00 AM</b> Sagrada Fam&iacute;lia Mass</span><span class="chip"><b>9:00 PM</b> Compline at St. James</span>';
+  var mozart=rowContaining(sun,'La clemenza di Tito'); if(mozart){mozart.querySelector('.anchor-txt').innerHTML='<span class="tag tag-flex">Sunday evening</span><h3>Flexible Gothic Quarter / El Born evening</h3><p>No Liceu performance is planned Sunday. Use the time for an unhurried dinner, dessert, or old-city walk before Compline.</p>';setWhen(mozart,'5:00&ndash;6:30 PM');var image=mozart.querySelector('.anchor-img');if(image)image.remove()}
+  var preOpera=rowContaining(sun,'Regroup: 4:30 PM at the Liceu');if(preOpera){var note=preOpera.querySelector('.note');if(note)note.textContent='No 4:30 PM regroup is needed; use this as flexible sightseeing, a rest break, or a slow walk back toward the Gothic Quarter.'}
+  var dinner=rowContaining(sun,'You need to be at St. James by 8:45');if(dinner){setWhen(dinner,'6:45&ndash;8:20 PM');var h=dinner.querySelector('.mhead h4');if(h)h.textContent='Sunday dinner near St. James';var n=dinner.querySelector('.note');if(n)n.textContent='Reserve for 6:45 PM if you want a table; leave enough buffer to arrive at St. James by 8:45 PM.'}
+  var tapas=rowContaining(sat,'Tapas in El Born');if(tapas){setWhen(tapas,'4:45&ndash;6:05 PM');var h2=tapas.querySelector('.mhead h4');if(h2)h2.textContent='Early tapas before the Liceu';var n2=tapas.querySelector('.note');if(n2)n2.textContent='Keep this early and close to your onward route. Leave El Born by about 6:05 PM for the Liceu.'}
+  var eveningTabs=sat.querySelector('.evening-tabs');if(eveningTabs){var tabRow=eveningTabs.closest('.row');if(tabRow)tabRow.remove()}
+  var oldFlex=rowContaining(sat,'Flex evening');if(oldFlex){setWhen(oldFlex,'After the show');var fh=oldFlex.querySelector('.mhead h4');if(fh)fh.textContent='Post-show flex';var fn=oldFlex.querySelector('.menu .grid');if(fn)fn.innerHTML='<div class="opt"><div class="opt-body"><b>La Rambla / Pla&ccedil;a Reial walk</b><div>Easy illuminated route after the performance. <span class="walk">5&ndash;10 min</span> from the Liceu.</div></div></div><div class="opt"><div class="opt-body"><b>Dessert or late coffee</b><div>Choose whatever is still appealing nearby; keep it low-stress after arrival day.</div></div></div><div class="opt"><div class="opt-body"><b>Head home</b><div>Taxi or Metro L3 + L2 back toward the apartment, roughly 25&ndash;35 min door-to-door.</div></div></div>'}
+  var show=document.createElement('div');show.className='row anchor-row';show.innerHTML='<div class="when">7:00 PM</div><div class="rail"><i></i></div><div class="what"><div class="anchorcard has-img"><div class="anchor-txt"><span class="tag tag-anchor">Saturday show</span><h3><a class="ext" target="_blank" rel="noopener" href="https://liceubarcelona.cat/en/celebrating-lliure">Celebrating Lliure at the Gran Teatre del Liceu<span class="arr">&#8599;</span></a></h3><p>Commemorative concert for the 50th anniversary of Teatre Lliure, conducted by Josep Pons. The official listing confirms <strong>Saturday, Nov. 28, 2026 at 7:00 PM</strong>. Buy tickets directly from the Liceu; the published running time is still TBD.</p></div><div class="ph h-liceu anchor-img" style="background-position:center" role="img" aria-label="Gran Teatre del Liceu"></div></div></div>';
+  var satTimeline=sat.querySelector('.timeline');if(satTimeline)satTimeline.appendChild(show);
+  var liceu=document.getElementById('g-liceu');if(liceu){var why=liceu.querySelector('.why');if(why)why.innerHTML='<strong>Why it matters:</strong> Saturday Nov. 28, 7:00 PM anchor: <em>Celebrating Lliure</em>, the Teatre Lliure 50th-anniversary concert. The Sunday Mozart plan has been removed.'}
+})();
+</script>
+<script>
+/* Keep the newly added Saturday show in chronological position. */
+(function(){var sat=document.getElementById('sat');if(!sat)return;var show=Array.prototype.slice.call(sat.querySelectorAll('.timeline > .row')).find(function(r){return r.textContent.indexOf('Celebrating Lliure')!==-1});var flex=Array.prototype.slice.call(sat.querySelectorAll('.timeline > .row')).find(function(r){return r.textContent.indexOf('Post-show flex')!==-1});if(show&&flex)flex.before(show)})();
+</script>
 </body></html>

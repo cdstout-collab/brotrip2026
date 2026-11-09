@@ -32,4 +32,14 @@
   var body=heading&&heading.parentElement.querySelector('tbody');if(!body||document.getElementById('celebrating-lliure-row'))return;
   var row=document.createElement('tr');row.id='celebrating-lliure-row';row.innerHTML='<td>Sat Nov. 28</td><td>7:00 PM</td><td><a target="_blank" rel="noopener" href="https://liceubarcelona.cat/en/celebrating-lliure">Celebrating Lliure — Gran Teatre del Liceu</a></td><td>Teatre Lliure 50th-anniversary concert, conducted by Josep Pons. The Liceu officially lists Saturday Nov. 28 at 7:00 PM; buy directly and confirm the running time. Replaces the cancelled Sunday Mozart plan.</td>';body.appendChild(row);
 })();
+</script><script>
+/* Confirmed Sunday Casa Batlló Gold-ticket entry. */
+(function(){
+  var heading=Array.prototype.slice.call(document.querySelectorAll('section h2')).find(function(h){return h.textContent.indexOf('Full Barcelona Planning Sheet')!==-1});
+  var body=heading&&heading.parentElement.querySelector('tbody');if(!body||document.getElementById('casa-batllo-gold-row'))return;
+  var row=document.createElement('tr');row.id='casa-batllo-gold-row';row.innerHTML='<td>Sun Nov. 29</td><td>6:30 PM</td><td><a target="_blank" rel="noopener" href="https://www.casabatllo.es/en/online-tickets/gold/">Casa Batll&oacute; Gold ticket</a></td><td>Confirmed 6:30 PM entry. Gold includes the augmented-reality tablet, Dragon&rsquo;s Rooftop, Gaud&iacute; D&ocirc;me, original concierge room, Batll&oacute; private residence and contemporary exhibition. Allow about 75 minutes; have dinner near Passeig de Gr&agrave;cia before the visit, then go directly to 9:00 PM Compline.</td>';body.appendChild(row);
+})();
+</script><script>
+/* Keep Travel Details aligned with the confirmed Sunday evening sequence. */
+(function(){var row=document.getElementById('casa-batllo-gold-row');if(!row)return;row.innerHTML='<td>Sun Nov. 29</td><td>6:30 PM</td><td><a target="_blank" rel="noopener" href="https://www.casabatllo.es/en/online-tickets/gold/">Casa Batll&oacute; Gold ticket</a></td><td>Confirmed 6:30 PM entry. Gold includes the augmented-reality tablet, Dragon&rsquo;s Rooftop, Gaud&iacute; D&ocirc;me, original concierge room, Batll&oacute; private residence and contemporary exhibition. Allow about 75 minutes, taxi to the Gothic Quarter for 9:00 PM Compline, then have dinner nearby afterward.</td>'})();
 </script></body></html>

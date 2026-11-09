@@ -45,4 +45,10 @@
 </script><script>
 /* Keep the Travel Details planning sheet consistent with the 90-minute Sant Pau visit. */
 (function(){Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){var c=r.children;if(r.textContent.indexOf('Sant Pau Art Nouveau Site')!==-1){c[1].innerHTML='10:45 AM&ndash;12:15 PM';c[3].innerHTML='Allow a full 90 minutes after Mass. Book admission; alternate: Horta Labyrinth Park.'}if(r.textContent.indexOf('Lunch near Sagrada Fam&iacute;lia')!==-1||r.textContent.indexOf('Lunch near Sagrada Família')!==-1)c[1].innerHTML='12:30&ndash;1:45 PM'})})();
+</script><script>
+/* Confirmed Monday drive to Montserrat. */
+(function(){
+  var transport=document.getElementById('transport');if(transport&&!document.getElementById('montserrat-drive-card'))transport.querySelector('.cards').insertAdjacentHTML('beforeend','<article class="card" id="montserrat-drive-card"><h3>Drive to Montserrat</h3><p>Monday&rsquo;s group plan is to drive directly to the Sanctuary. Allow about 75&ndash;90 minutes from Barcelona including traffic, mountain-road pace and parking. The official Sanctuary car park is attended but capacity is limited; arrive early. Backup: Monistrol Vila&rsquo;s free car park plus the 15-minute rack railway.</p></article>');
+  Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){if(r.textContent.indexOf('Montserrat')!==-1&&r.textContent.indexOf('Priority.')!==-1){r.children[3].innerHTML='Drive directly to the Sanctuary; allow 75&ndash;90 min including parking. Sanctuary parking is attended but limited. Backup: Monistrol Vila car park + rack railway.'}});
+})();
 </script></body></html>

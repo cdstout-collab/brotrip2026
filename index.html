@@ -469,4 +469,33 @@ h2.sec{font-size:1.8rem;margin:50px 0 6px;border-bottom:2px solid var(--line);pa
   when(find('Use the late afternoon flex period'),'2:00&ndash;6:00 PM');
 })();
 </script>
+<script>
+/* Monday concert removed: retain an easy post-Montserrat evening instead. */
+(function(){
+  var mon=document.getElementById('mon');if(!mon)return;
+  function rows(){return Array.prototype.slice.call(mon.querySelectorAll('.timeline > .row'))}
+  function find(needle){return rows().find(function(r){return r.textContent.indexOf(needle)!==-1})}
+  document.querySelectorAll('a.gday[href="#mon"] .gt').forEach(function(x){x.innerHTML='<b>Monday &middot; Nov. 30</b><strong>Montserrat &amp; Escolania</strong>Escolania Boys&rsquo; Choir &middot; relaxed Barcelona evening'});
+  var title=mon.querySelector('.dayhead h2');if(title)title.innerHTML='Montserrat &amp; Escolania';
+  var chips=mon.querySelector('.chips');if(chips)chips.innerHTML='<span class="chip"><b>1:00 PM</b> Escolania Boys&rsquo; Choir</span>';
+  var concert=find('The Farinelli Project');if(concert)concert.remove();
+  var dinner=find('Early dinner near the Palau');if(dinner){var head=dinner.querySelector('.mhead h4');if(head)head.textContent='Flexible dinner after Montserrat';var note=dinner.querySelector('.note');if(note)note.textContent='No concert to rush to. Pick the part of Barcelona you feel like seeing after the mountain day, or head home and eat near the apartment.'}
+  var palauFlex=find('Go straight toward the Palau');if(palauFlex){var grid=palauFlex.querySelector('.grid');if(grid)grid.innerHTML='<div class="opt"><div class="opt-body"><b>A &mdash; Head home / reset</b><div>Best choice after a full Montserrat day. <span class="walk">About 25&ndash;30 min by metro</span>.</div></div></div><div class="opt"><div class="opt-body"><b>B &mdash; Gothic Quarter dinner</b><div>Return to your favorite old-city area for an unhurried meal and short night walk.</div></div></div><div class="opt"><div class="opt-body"><b>C &mdash; El Born / Palau area</b><div>Keep exploring central Barcelona if everyone still has energy; there is no venue deadline now.</div></div></div>';var n=palauFlex.querySelector('.note');if(n)n.textContent='No fixed regroup time or concert commitment Monday night.'}
+  var palau=document.getElementById('g-palau');if(palau){var why=palau.querySelector('.why');if(why)why.innerHTML='<strong>Why it matters:</strong> Optional Modernista architecture stop or concert venue if you choose to visit independently; the Monday-night concert has been removed from this itinerary.'}
+})();
+</script>
+<script>
+/* Montserrat transport is now by car rather than FGC. */
+(function(){
+  var mon=document.getElementById('mon');if(!mon)return;
+  var rows=Array.prototype.slice.call(mon.querySelectorAll('.timeline > .row'));
+  function find(needle){return rows.find(function(r){return r.textContent.indexOf(needle)!==-1})}
+  function when(row,text){var w=row&&row.querySelector('.when');if(w)w.innerHTML=text}
+  var breakfast=find('Quick breakfast before Montserrat');if(breakfast){var b=breakfast.querySelector('.opt.best .opt-body div');if(b)b.innerHTML='Buy pastries/fruit the day before and eat before leaving. Best for an early road departure and the mountain parking buffer.'}
+  var drive=find('FGC R5 toward');if(drive){when(drive,'8:15&ndash;9:45 AM');var card=drive.querySelector('.move');if(card)card.innerHTML='<strong>Drive Barcelona &rarr; <a class="gl" href="#g-montserrat">Montserrat Sanctuary</a></strong><span>Allow about 75&ndash;90 min door-to-door, including traffic, mountain-road pace and parking. Use navigation on the day; leave a little earlier if weather is poor.</span>'}
+  var approach=rows.find(function(r){return r.textContent.indexOf('Aeri de Montserrat')!==-1&&r.textContent.indexOf('Cremallera de Montserrat')!==-1});if(approach){when(approach,'9:45&ndash;10:00 AM');var head=approach.querySelector('.mhead h4');if(head)head.textContent='Parking plan';var grid=approach.querySelector('.grid');if(grid)grid.innerHTML='<div class="opt best"><div class="opt-body"><span class="pick">Default plan</span><b>Drive all the way to the Sanctuary</b><div>Use Montserrat&rsquo;s attended Sanctuary car park. Capacity is limited and it has a public fee, so arriving before the late-morning rush matters. <span class="walk">Short walk from parking to the monastery area</span>.</div></div></div><div class="opt"><div class="opt-body"><b>Backup: Monistrol Vila + Cremallera</b><div>If the Sanctuary car park is full or weather makes the upper road unappealing, use the free 900-space Monistrol Vila car park and take the rack railway. The official journey is about 15 min, normally every 20 min.</div></div></div>'}
+  var returnRow=find('Return to Barcelona');if(returnRow){var ret=returnRow.querySelector('.move');if(ret)ret.innerHTML='<strong>Drive Montserrat &rarr; Barcelona</strong><span>Allow about 75&ndash;90 min, including the descent and city traffic. Fuel/return the vehicle if it is a rental, then keep the evening flexible.</span>'}
+  var glossary=document.getElementById('g-montserrat');if(glossary){var why=glossary.querySelector('.why');if(why)why.innerHTML='<strong>Why it matters:</strong> Monday&rsquo;s mountain-and-monastery destination. The group is driving directly to the Sanctuary; parking is attended but limited, so arrive early and keep Monistrol Vila + the rack railway as a backup.'}
+})();
+</script>
 </body></html>

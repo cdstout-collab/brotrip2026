@@ -42,4 +42,7 @@
 </script><script>
 /* Keep Travel Details aligned with the confirmed Sunday evening sequence. */
 (function(){var row=document.getElementById('casa-batllo-gold-row');if(!row)return;row.innerHTML='<td>Sun Nov. 29</td><td>6:30 PM</td><td><a target="_blank" rel="noopener" href="https://www.casabatllo.es/en/online-tickets/gold/">Casa Batll&oacute; Gold ticket</a></td><td>Confirmed 6:30 PM entry. Gold includes the augmented-reality tablet, Dragon&rsquo;s Rooftop, Gaud&iacute; D&ocirc;me, original concierge room, Batll&oacute; private residence and contemporary exhibition. Allow about 75 minutes, taxi to the Gothic Quarter for 9:00 PM Compline, then have dinner nearby afterward.</td>'})();
+</script><script>
+/* Keep the Travel Details planning sheet consistent with the 90-minute Sant Pau visit. */
+(function(){Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){var c=r.children;if(r.textContent.indexOf('Sant Pau Art Nouveau Site')!==-1){c[1].innerHTML='10:45 AM&ndash;12:15 PM';c[3].innerHTML='Allow a full 90 minutes after Mass. Book admission; alternate: Horta Labyrinth Park.'}if(r.textContent.indexOf('Lunch near Sagrada Fam&iacute;lia')!==-1||r.textContent.indexOf('Lunch near Sagrada Família')!==-1)c[1].innerHTML='12:30&ndash;1:45 PM'})})();
 </script></body></html>

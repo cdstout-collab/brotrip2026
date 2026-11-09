@@ -458,4 +458,15 @@ h2.sec{font-size:1.8rem;margin:50px 0 6px;border-bottom:2px solid var(--line);pa
   var prep=find('Use the late afternoon flex period');if(prep){var note2=prep.querySelector('.note');if(note2)note2.textContent='Use the late afternoon flex period however you like; regroup outside Casa Batlló by 6:15 PM for the confirmed 6:30 PM Gold-ticket entry. There is no dinner before the visit.'}
 })();
 </script>
+<script>
+/* Sunday timing adjustment: give Sant Pau the requested 90 minutes. */
+(function(){
+  var sun=document.getElementById('sun');if(!sun)return;
+  function find(needle){return Array.prototype.slice.call(sun.querySelectorAll('.timeline > .row')).find(function(r){return r.textContent.indexOf(needle)!==-1})}
+  function when(row,text){var w=row&&row.querySelector('.when');if(w)w.innerHTML=text}
+  var santPau=find('Recinte Modernista de Sant Pau');if(santPau){when(santPau,'10:45 AM&ndash;12:15 PM');var p=santPau.querySelector('.stop-txt p');if(p)p.textContent='Allow a full 90 minutes to explore the former hospital&rsquo;s pavilions, gardens, tilework and underground passages.'}
+  when(find('Tapas lunch near Sant Pau / Sagrada'),'12:30&ndash;1:45 PM');
+  when(find('Use the late afternoon flex period'),'2:00&ndash;6:00 PM');
+})();
+</script>
 </body></html>

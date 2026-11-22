@@ -63,4 +63,12 @@
   var card=document.getElementById('montserrat-drive-card');if(card)card.innerHTML='<h3>Monday: Montserrat driving loop</h3><p><strong>9:30 AM</strong> Barcelona departure &middot; <strong>12:00 PM</strong> separate Black Madonna ticket &middot; <strong>1:00 PM</strong> separate Escolania reservation (arrive 12:45) &middot; <strong>1:30 PM</strong> drive to Mura for lunch + walk &middot; <strong>4:10 PM</strong> optional Talamanca stop &middot; return to Barcelona around 6:30 PM. Talamanca is daylight/weather dependent.</p>';
   Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){if(r.textContent.indexOf('Black Madonna + Boys')!==-1){r.children[3].innerHTML='Leave Barcelona 9:30 AM. Buy separate 12:00 PM Black Madonna and 1:00 PM choir tickets; after the choir, drive to Mura for lunch and a walk, then optional Talamanca if daylight/weather allow.'}});
 })();
-</script></body></html>
+</script>
+<script>
+/* Monday now uses the Talamanca-first loop and Cathedral-market evening. */
+(function(){
+  var card=document.getElementById('montserrat-drive-card');if(card)card.innerHTML='<h3>Monday: Talamanca + Montserrat</h3><p><strong>9:30 AM</strong> Barcelona departure &middot; <strong>10:35 AM</strong> Talamanca village stop &middot; <strong>12:30 PM</strong> Montserrat arrival &middot; <strong>1:15 PM</strong> Boys&rsquo; Choir &middot; <strong>1:30 PM</strong> Black Madonna &middot; return to Barcelona around 3:00 PM &middot; <strong>6:30 PM</strong> Gothic Quarter dinner &middot; Fira de Santa Ll&uacute;cia until 9:00 PM.</p>';
+  Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){if(r.textContent.indexOf('Black Madonna + Boys')!==-1){r.children[2].innerHTML='Talamanca first; Montserrat choir + Black Madonna; Old Town dinner + Christmas market';r.children[3].innerHTML='Leave Barcelona 9:30 AM. Talamanca is a one-hour stop, then allow 50&ndash;60 min to the Sanctuary plus parking. Confirmed 1:15 PM Boys&rsquo; Choir and directly following 1:30 PM Black Madonna; return to Barcelona, dinner in the Gothic Quarter, then Fira de Santa Ll&uacute;cia before its 9:00 PM close.'}});
+})();
+</script>
+</body></html>

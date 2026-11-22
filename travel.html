@@ -51,4 +51,16 @@
   var transport=document.getElementById('transport');if(transport&&!document.getElementById('montserrat-drive-card'))transport.querySelector('.cards').insertAdjacentHTML('beforeend','<article class="card" id="montserrat-drive-card"><h3>Drive to Montserrat</h3><p>Monday&rsquo;s group plan is to drive directly to the Sanctuary. Allow about 75&ndash;90 minutes from Barcelona including traffic, mountain-road pace and parking. The official Sanctuary car park is attended but capacity is limited; arrive early. Backup: Monistrol Vila&rsquo;s free car park plus the 15-minute rack railway.</p></article>');
   Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){if(r.textContent.indexOf('Montserrat')!==-1&&r.textContent.indexOf('Priority.')!==-1){r.children[3].innerHTML='Drive directly to the Sanctuary; allow 75&ndash;90 min including parking. Sanctuary parking is attended but limited. Backup: Monistrol Vila car park + rack railway.'}});
 })();
+</script><script>
+/* Final Monday Montserrat driving-loop details. */
+(function(){
+  var card=document.getElementById('montserrat-drive-card');if(card)card.innerHTML='<h3>Monday: Montserrat driving loop</h3><p><strong>7:15 AM</strong> Barcelona departure &middot; <strong>9:00 AM</strong> separate Black Madonna ticket &middot; <strong>1:00 PM</strong> separate Escolania reservation (arrive 12:45) &middot; <strong>1:30 PM</strong> drive to Mura &middot; <strong>3:25 PM</strong> optional Talamanca stop &middot; return to Barcelona around 6:00 PM. Keep Talamanca optional if the morning runs late or road/weather conditions are poor.</p>';
+  Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){if(r.textContent.indexOf('Montserrat')!==-1&&r.textContent.indexOf('Priority.')!==-1){r.children[2].innerHTML='Drive to Montserrat; Black Madonna + Boys&rsquo; Choir, then Mura and optional Talamanca';r.children[3].innerHTML='Leave Barcelona 7:15 AM. Buy separate early Black Madonna and 1:00 PM choir tickets; after choir, drive to Mura then optional Talamanca. Use live navigation and skip Talamanca if delayed.'}});
+})();
+</script><script>
+/* Later Monday departure and noon Black Madonna booking. */
+(function(){
+  var card=document.getElementById('montserrat-drive-card');if(card)card.innerHTML='<h3>Monday: Montserrat driving loop</h3><p><strong>9:30 AM</strong> Barcelona departure &middot; <strong>12:00 PM</strong> separate Black Madonna ticket &middot; <strong>1:00 PM</strong> separate Escolania reservation (arrive 12:45) &middot; <strong>1:30 PM</strong> drive to Mura for lunch + walk &middot; <strong>4:10 PM</strong> optional Talamanca stop &middot; return to Barcelona around 6:30 PM. Talamanca is daylight/weather dependent.</p>';
+  Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){if(r.textContent.indexOf('Black Madonna + Boys')!==-1){r.children[3].innerHTML='Leave Barcelona 9:30 AM. Buy separate 12:00 PM Black Madonna and 1:00 PM choir tickets; after the choir, drive to Mura for lunch and a walk, then optional Talamanca if daylight/weather allow.'}});
+})();
 </script></body></html>

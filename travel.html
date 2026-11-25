@@ -99,4 +99,7 @@
 <script>
 (function(){document.querySelectorAll('#transport .card').forEach(function(c){if(c.textContent.indexOf('Budget rental: Monday pickup')!==-1){var p=c.querySelector('p');if(p)p.innerHTML=p.innerHTML.replace('Leave around 5:30 AM; check first train and counter terminal.','Leave the apartment around 5:40 AM. Take the 6:09 AM R2 Nord from Sants, arriving at Aeroport T2 at 6:26 AM; check live times and the counter terminal.')}})})();
 </script>
+<script>
+(function(){var stay=document.getElementById('stay');if(!stay)return;Array.prototype.slice.call(stay.querySelectorAll('.card')).forEach(function(c){var h=c.querySelector('h3');if(!h)return;if(h.textContent.indexOf('Apartment Lucia')!==-1)c.insertAdjacentHTML('beforeend','<p><strong>Host Alex:</strong> <a href="tel:+34627423202">+34 627 42 32 02</a><br><strong>Co-host Rosario:</strong> <a href="tel:+34681269169">+34 681 269 169</a> (English/Spanish; 10 AM–7 PM local time).</p>');if(h.textContent.indexOf('SEA VİEW FLAT')!==-1)c.insertAdjacentHTML('beforeend','<p><strong>Host Muhammed Abed Ali:</strong> <a href="tel:+905546677803">+90 554 667 78 03</a></p>')})})();
+</script>
 </body></html>

@@ -71,4 +71,13 @@
   Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){if(r.textContent.indexOf('Black Madonna + Boys')!==-1){r.children[2].innerHTML='Talamanca first; Montserrat choir + Black Madonna; Old Town dinner + Christmas market';r.children[3].innerHTML='Leave Barcelona 9:30 AM. Talamanca is a one-hour stop, then allow 50&ndash;60 min to the Sanctuary plus parking. Confirmed 1:15 PM Boys&rsquo; Choir and directly following 1:30 PM Black Madonna; return to Barcelona, dinner in the Gothic Quarter, then Fira de Santa Ll&uacute;cia before its 9:00 PM close.'}});
 })();
 </script>
+<script>
+/* Carcassonne day revised: Santa Florentina removed; Girona is an optional return-leg stop. */
+(function(){
+  Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){
+    if(r.textContent.indexOf('Carcassonne, France day trip')!==-1){r.children[2].innerHTML='Carcassonne road trip + optional Girona return stop';r.children[3].innerHTML='Santa Florentina is removed. Drive directly to Carcassonne for the Count&rsquo;s Castle, ramparts, Saint-Nazaire Basilica and the Cit&eacute; lanes; Girona is an optional evening exterior walk on the route back.'}
+    if(r.textContent.indexOf('Return to Barcelona; dinner near Airbnb')!==-1){r.children[1].innerHTML='~9:00 PM if Girona stop happens';r.children[2].innerHTML='Return via Girona or directly to Barcelona';r.children[3].innerHTML='Girona adds an optional Cathedral/Jewish Quarter/riverfront walk; skip it for an earlier arrival.'}
+  });
+})();
+</script>
 </body></html>

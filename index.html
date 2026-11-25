@@ -582,4 +582,17 @@ h2.sec{font-size:1.8rem;margin:50px 0 6px;border-bottom:2px solid var(--line);pa
   });
 })();
 </script>
+<script>
+(function(){
+  function mark(id,needle,note){var day=document.getElementById(id);if(!day)return;var row=Array.prototype.slice.call(day.querySelectorAll('.timeline > .row')).find(function(x){return x.textContent.indexOf(needle)!==-1});if(row){var body=row.querySelector('.anchor-txt,.stop-txt,.menu');if(body)body.insertAdjacentHTML('beforeend','<p><strong>Tickets confirmed:</strong> '+note+'</p>')}}
+  mark('sat','Celebrating Lliure','Five tickets; Saturday at 7:00 PM.');
+  mark('sun','Casa Batlló Gold ticket','Five tickets for A Winter Night Gold, Sunday at 6:30 PM.');
+  mark('mon','Confirmed 1:00 PM Boys','Five Boys&rsquo; Choir tickets, Monday at 1:00 PM.');
+  mark('mon','Confirmed 1:30 PM Black Madonna','Five Throne of Our Lady tickets, Monday at 1:30 PM.');
+  var thu=document.getElementById('thu');if(!thu)return;
+  var chips=thu.querySelector('.chips');if(chips)chips.insertAdjacentHTML('beforeend','<span class="chip"><b>8:30 PM</b> Rhythm of the Dance</span>');
+  var timeline=thu.querySelector('.timeline');if(timeline){var dinner=Array.prototype.slice.call(timeline.querySelectorAll('.row')).find(function(r){return r.textContent.indexOf('Dinner near Sultanahmet')!==-1});if(dinner){var w=dinner.querySelector('.when'),n=dinner.querySelector('.note');if(w)w.textContent='6:15–7:30 PM';if(n)n.textContent='Finish in time to reach Hodjapasha before the 8:30 PM show.'}timeline.insertAdjacentHTML('beforeend','<div class="row anchor-row"><div class="when">8:30 PM</div><div class="rail"><i></i></div><div class="what"><div class="anchorcard"><div class="anchor-txt"><span class="tag tag-anchor">Confirmed tickets</span><h3><a class="gl" href="#g-hodjapasha">Hodjapasha / Rhythm of the Dance</a></h3><p>Four adult tickets for Thursday, Dec. 3 at 8:30 PM. The venue is at Hocapaşa Hamamı Sokak 3, Sirkeci; allow time to travel from dinner and collect tickets. Bring the booking confirmation and payment card as requested in the order terms.</p></div></div></div></div>')}
+  var gloss=document.getElementById('istanbul-glossary');if(gloss&&!document.getElementById('g-hodjapasha'))gloss.insertAdjacentHTML('beforeend','<div class="gloss"><div class="gcard" id="g-hodjapasha"><div class="gb"><h4><a class="ext" href="https://www.hodjapasha.com/" target="_blank" rel="noopener">Hodjapasha Cultural Centre / Hocapaşa Kültür Merkezi<span class="arr">&#8599;</span></a></h4><div>Performance venue in a historic hamam in Sirkeci.</div><div class="why"><strong>Why it matters:</strong> Confirmed Rhythm of the Dance show for four on Thursday at 8:30 PM.</div></div></div></div>');
+})();
+</script>
 </body></html>

@@ -89,4 +89,11 @@
 <script>
 (function(){var card=document.getElementById('montserrat-drive-card');if(card)card.innerHTML=card.innerHTML.replace('1:15 PM','1:00 PM');Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){if(r.textContent.indexOf('Confirmed 1:15 PM Boys')!==-1)r.children[3].innerHTML=r.children[3].innerHTML.replace('1:15 PM','1:00 PM')})})();
 </script>
+<script>
+(function(){
+  var flight=document.querySelector('#flights tbody');if(flight){var rows=Array.prototype.slice.call(flight.querySelectorAll('tr')),arrival=rows.find(function(r){return r.textContent.indexOf('OFCHFC')!==-1&&r.textContent.indexOf('BNA 1:34')!==-1}),returns=rows.find(function(r){return r.textContent.trim()==='Returns'}),barcelona=rows.find(function(r){return r.textContent.trim()==='Barcelona to Istanbul'});if(arrival&&barcelona){arrival.cells[0].textContent='Charlie Stout (second traveler)';flight.insertBefore(arrival,barcelona)}rows.forEach(function(r){if(r.textContent.indexOf('OFCHFC')!==-1&&r.textContent.indexOf('BCN 12:00')!==-1)r.cells[0].textContent='Charlie Stout (second traveler)';if(r.cells[0]&&r.cells[0].textContent.trim()==='Charles Stout')r.cells[0].textContent='Charles Stout (first traveler)'})}
+  document.querySelectorAll('#transport .card').forEach(function(c){if(c.textContent.indexOf('BCN → apartment')!==-1)c.innerHTML='<h3>BCN → apartment by train + metro</h3><p>From T2 take R2 Nord to Sants Estació, then L5 toward Vall d’Hebron to Sagrada Família and walk to Carrer de Sardenya 213. From T1 use the free inter-terminal shuttle to T2. Allow 60–90 minutes including transfers and waits.</p>';if(c.textContent.indexOf('Budget rental: Monday pickup')!==-1){var p=c.querySelector('p');if(p)p.insertAdjacentHTML('beforeend','<br><strong>Getting there:</strong> Walk to Sagrada Família, L5 toward Cornellà Centre to Sants Estació, then R2 Nord toward Aeroport (T2). Shuttle to T1 if needed. Leave around 5:30 AM; check first train and counter terminal.') }});
+  document.querySelectorAll('table tbody tr').forEach(function(r){if(r.textContent.indexOf('Travel to Apartment Lucia')!==-1&&r.cells.length>3)r.cells[3].textContent='R2 Nord from T2 to Sants, then L5 to Sagrada Família and walk; free T1–T2 shuttle if needed. Allow 60–90 minutes and reconfirm luggage drop if delayed.'});
+})();
+</script>
 </body></html>

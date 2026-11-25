@@ -602,4 +602,11 @@ h2.sec{font-size:1.8rem;margin:50px 0 6px;border-bottom:2px solid var(--line);pa
   var nav=document.querySelector('.topbar');if(nav)nav.insertAdjacentHTML('beforeend','<a href="#ticket-details">Tickets</a>');
 })();
 </script>
+<script>
+(function(){
+  var sat=document.getElementById('sat');if(sat)Array.prototype.slice.call(sat.querySelectorAll('.timeline > .row')).forEach(function(r){if(r.textContent.indexOf('Airport → apartment neighborhood')!==-1){var w=r.querySelector('.when'),m=r.querySelector('.move');if(w)w.textContent='~10:15–11:30 AM';if(m)m.innerHTML='<strong>Airport → apartment by train + metro</strong><span>From Terminal 2 take the R2 Nord airport train to Sants Estació, then metro L5 toward Vall d’Hebron to Sagrada Família and walk to Carrer de Sardenya 213. If arriving at Terminal 1, first take the free inter-terminal shuttle to T2. Allow roughly 60–90 minutes including waits, transfers and walking; confirm luggage drop if delayed.</span>'}});
+  var mon=document.getElementById('mon');if(mon)Array.prototype.slice.call(mon.querySelectorAll('.timeline > .row')).forEach(function(r){if(r.textContent.indexOf('Apartment → Barcelona airport (BCN)')!==-1){var w=r.querySelector('.when'),m=r.querySelector('.move');if(w)w.textContent='~5:30–7:00 AM';if(m)m.innerHTML='<strong>Apartment → BCN by metro + train</strong><span>Walk to Sagrada Família, take L5 toward Cornellà Centre to Sants Estació, then R2 Nord toward Aeroport at T2. Use the free shuttle if the Budget counter is at T1. Check the first Monday trains and the counter terminal in advance; allow 75–90 minutes including waits.</span>'}});
+  document.querySelectorAll('.travel-card').forEach(function(c){if(c.textContent.indexOf('Airport → apartment')!==-1)c.innerHTML='<h3>Airport → apartment</h3><p><b>R2 Nord train + metro L5</b><br>T2 → Sants Estació → Sagrada Família; walk to Carrer de Sardenya 213. From T1 use the free shuttle to T2 first. Allow 60–90 minutes including waits.</p>'});
+})();
+</script>
 </body></html>

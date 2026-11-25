@@ -86,4 +86,7 @@
 <script>
 (function(){var cards=document.querySelector('#transport .cards');if(!cards)return;cards.insertAdjacentHTML('beforeend','<article class="card"><h3>Budget rental reservation</h3><p><strong>Pickup:</strong> Monday, Nov. 30, 7:00 AM &mdash; Barcelona Airport (BCN)<br><strong>Return:</strong> Wednesday, Dec. 2, 11:00 AM &mdash; Barcelona Airport (BCN)<br><strong>Vehicle:</strong> Volkswagen Caddy or similar, seven passengers; unlimited mileage<br><strong>Due at pickup:</strong> $207.64; credit-card deposit additional<br><strong>Budget confirmation:</strong> 06980304US2<br><strong>Expedia itinerary:</strong> 73584587146284<br><strong>Budget:</strong> +34 901 108 495</p><p>Primary driver needs a valid license and credit card in their name. Confirm international driving permit requirements and permission/fees for taking the car into France before the Carcassonne trip.</p></article>')})();
 </script>
+<script>
+(function(){var card=document.getElementById('montserrat-drive-card');if(card)card.innerHTML=card.innerHTML.replace('1:15 PM','1:00 PM');Array.prototype.slice.call(document.querySelectorAll('table tbody tr')).forEach(function(r){if(r.textContent.indexOf('Confirmed 1:15 PM Boys')!==-1)r.children[3].innerHTML=r.children[3].innerHTML.replace('1:15 PM','1:00 PM')})})();
+</script>
 </body></html>

@@ -571,4 +571,15 @@ h2.sec{font-size:1.8rem;margin:50px 0 6px;border-bottom:2px solid var(--line);pa
   tl.insertAdjacentHTML('afterbegin','<div class="row move-row"><div class="when">~6:00&ndash;6:50 AM</div><div class="rail"><i></i></div><div class="what"><div class="move"><strong>Apartment &rarr; Barcelona airport (BCN)</strong><span>Primary driver takes a taxi or prearranged transfer. Allow 40&ndash;50 minutes; verify the Budget counter and terminal beforehand.</span></div></div></div><div class="row anchor-row"><div class="when">7:00&ndash;8:00 AM</div><div class="rail"><i></i></div><div class="what"><div class="anchorcard"><div class="anchor-txt"><span class="tag tag-anchor">Confirmed pickup</span><h3>Budget rental car &mdash; Barcelona airport</h3><p>7:00 AM reservation for a Volkswagen Caddy or similar, seven passengers. Bring the primary driver&rsquo;s license and credit card in the same name; allow time for paperwork and inspection. Confirm permission and any fee for driving to France.</p></div></div></div></div><div class="row move-row"><div class="when">~8:00&ndash;9:15 AM</div><div class="rail"><i></i></div><div class="what"><div class="move"><strong>Drive back to the apartment and collect the group</strong><span>Allow for morning traffic; aim to be ready to leave for Talamanca at 9:30 AM. If pickup runs late, shorten Talamanca to protect Montserrat.</span></div></div></div>');
 })();
 </script>
+<script>
+(function(){
+  document.querySelectorAll('a.gday[href="#mon"] .gt').forEach(function(el){el.innerHTML=el.innerHTML.replace('1:15 PM','1:00 PM')});
+  var mon=document.getElementById('mon');if(!mon)return;
+  var chips=mon.querySelector('.chips');if(chips)chips.innerHTML=chips.innerHTML.replace('1:15 PM','1:00 PM');
+  Array.prototype.slice.call(mon.querySelectorAll('.timeline > .row')).forEach(function(row){
+    if(row.textContent.indexOf('Confirmed 1:15 PM Boys')!==-1){var w=row.querySelector('.when'),p=row.querySelector('.anchor-txt p');if(w)w.innerHTML='12:45&ndash;1:30 PM';if(p)p.innerHTML='<strong>Confirmed 1:00 PM Boys&rsquo; Choir ticket.</strong> Arrive by 12:45 PM, then proceed to the 1:30 PM Black Madonna booking.'}
+    if(row.textContent.indexOf('Montserrat arrival buffer')!==-1){var w=row.querySelector('.when'),n=row.querySelector('.note');if(w)w.innerHTML='~12:30&ndash;12:45 PM';if(n)n.textContent='Go to the Basilica by 12:45 PM for the confirmed 1:00 PM choir booking. If running late, shorten Talamanca.'}
+  });
+})();
+</script>
 </body></html>

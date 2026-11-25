@@ -96,4 +96,7 @@
   document.querySelectorAll('table tbody tr').forEach(function(r){if(r.textContent.indexOf('Travel to Apartment Lucia')!==-1&&r.cells.length>3)r.cells[3].textContent='R2 Nord from T2 to Sants, then L5 to Sagrada Família and walk; free T1–T2 shuttle if needed. Allow 60–90 minutes and reconfirm luggage drop if delayed.'});
 })();
 </script>
+<script>
+(function(){document.querySelectorAll('#transport .card').forEach(function(c){if(c.textContent.indexOf('Budget rental: Monday pickup')!==-1){var p=c.querySelector('p');if(p)p.innerHTML=p.innerHTML.replace('Leave around 5:30 AM; check first train and counter terminal.','Leave the apartment around 5:40 AM. Take the 6:09 AM R2 Nord from Sants, arriving at Aeroport T2 at 6:26 AM; check live times and the counter terminal.')}})})();
+</script>
 </body></html>

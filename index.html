@@ -609,4 +609,10 @@ h2.sec{font-size:1.8rem;margin:50px 0 6px;border-bottom:2px solid var(--line);pa
   document.querySelectorAll('.travel-card').forEach(function(c){if(c.textContent.indexOf('Airport → apartment')!==-1)c.innerHTML='<h3>Airport → apartment</h3><p><b>R2 Nord train + metro L5</b><br>T2 → Sants Estació → Sagrada Família; walk to Carrer de Sardenya 213. From T1 use the free shuttle to T2 first. Allow 60–90 minutes including waits.</p>'});
 })();
 </script>
+<script>
+(function(){var mon=document.getElementById('mon');if(!mon)return;Array.prototype.slice.call(mon.querySelectorAll('.timeline > .row')).forEach(function(r){if(r.textContent.indexOf('Apartment → BCN by metro + train')!==-1){var w=r.querySelector('.when'),m=r.querySelector('.move');if(w)w.textContent='5:40–6:26 AM';if(m)m.innerHTML='<strong>Apartment → BCN by metro + train</strong><span>Leave the apartment around 5:40 AM. Walk to Sagrada Família, take L5 toward Cornellà Centre to Sants Estació, then the <strong>6:09 AM R2 Nord</strong> toward Aeroport, arriving at T2 at <strong>6:26 AM</strong>. Check live times and the Budget counter terminal; allow for the free shuttle if it is at T1.</span>'}})})();
+</script>
+<script>
+(function(){var mon=document.getElementById('mon');if(!mon)return;Array.prototype.slice.call(mon.querySelectorAll('.timeline > .row')).forEach(function(r){if(r.textContent.indexOf('Budget rental car')!==-1){var p=r.querySelector('.anchor-txt');if(p)p.insertAdjacentHTML('beforeend','<p><strong>Budget contact:</strong> <a href="tel:+34901108495">+34 901 108 495</a>. Confirm which terminal has your reservation and whether pickup at the T2 Avis/Budget location is possible.</p>')}})})();
+</script>
 </body></html>
